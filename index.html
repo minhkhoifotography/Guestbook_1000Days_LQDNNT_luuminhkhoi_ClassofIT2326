@@ -4,97 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1000-Day Journey - Michael Lưu Minh Khôi</title>
-    <!-- Thư viện Swiper.js cho album ảnh -->
+    <!-- Thư viện Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Cập nhật font Dancing Script hỗ trợ tiếng Việt chuẩn xác -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <button class="back-btn">&#10229;</button>
-        <h1>kỷ yếu thanh xuân</h1>
-        <button class="menu-btn">&#8942;</button>
-    </header>
+    <!-- Khung bọc toàn bộ trang web để căn giữa trên PC -->
+    <div id="app-wrapper">
+        <header>
+            <button class="back-btn">&#10229;</button>
+            <h1>kỷ yếu thanh xuân</h1>
+            <button class="menu-btn">&#8942;</button>
+        </header>
 
-    <main>
-        <!-- Phần Banner chính -->
-        <section class="hero">
-            <div class="header-container">
-                <img src="https://via.placeholder.com/60x60?text=LQD" alt="Logo THPT Chuyên Lê Quý Đôn" class="school-logo">
-                <div class="title-wrapper">
-                    <h2>1000-DAY<br>JOURNEY</h2>
-                    <p class="name">Lưu Minh Khôi</p>
+        <main>
+            <!-- Phần Banner chính -->
+            <section class="hero">
+                <div class="header-container">
+                    <img src="https://via.placeholder.com/60x60?text=LQD" alt="Logo THPT Chuyên Lê Quý Đôn" class="school-logo">
+                    <div class="title-wrapper">
+                        <h2>1000-DAY<br>JOURNEY</h2>
+                        <p class="name">Lưu Minh Khôi</p>
+                    </div>
                 </div>
-            </div>
-            <img src="https://via.placeholder.com/400x500?text=Ảnh+chân+dung+Minh+Khôi" alt="Ảnh chân dung" class="cover-photo">
-            <div class="slogan-container">
-                <p class="slogan-large">Thanh xuân</p>
-                <p class="slogan-small">Của chúng mình</p>
-            </div>
-        </section>
-
-        <!-- Thông tin thời gian địa điểm -->
-        <section class="details">
-            <h3>Kỷ niệm cùng</h3>
-            <p class="to-name">Tập thể lớp</p>
-            <div class="time-container">
-                <p class="time">2023 - 2026</p>
-                <p class="day">Khóa học</p>
-                <p class="date">Trưởng thành & Tri ân</p>
-            </div>
-            <h3>Tại mái trường</h3>
-            <p class="location">THPT CHUYÊN LÊ QUÝ ĐÔN</p>
-            <p class="address">67 Yersin, Phương Sài, Nha Trang, Khánh Hòa</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.022421869389!2d109.18956901124434!3d12.24677768792078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170677a28e93ba9%3A0x6e289c0a340b07de!2zVHLGsOG7nW5nIFRIUFQgQ2h1ecOqbiBMw6ogUXXDvSDEkMO0bg!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-
-        <!-- Album Ảnh -->
-        <section class="photo-album">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/400x300?text=Kỷ+niệm+1" alt="Ảnh 1"></div>
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/400x300?text=Kỷ+niệm+2" alt="Ảnh 2"></div>
+                <img src="https://via.placeholder.com/400x500?text=Ảnh+chân+dung+Minh+Khôi" alt="Ảnh chân dung" class="cover-photo">
+                <div class="slogan-container">
+                    <p class="slogan-large">Thanh xuân</p>
+                    <p class="slogan-small">Của chúng mình</p>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Phần Tâm Thư -->
-        <section class="letter">
-            <h3 class="letter-heading">Đi qua hoài nghi - giữ lại chính mình</h3>
-            <p>Hành trình 1000 ngày tại Lê Quý Đôn đến với mình như một cơ hội, mang theo rất nhiều điều để học, để lớn lên. Những ngày tháng miệt mài cùng các dòng code ở lớp Chuyên Tin đôi khi tạo ra những áp lực vô hình. Ở đây, ai cũng giỏi, giỏi đến mức khiến mình đôi khi thấy bản thân nhỏ bé lại giữa những nỗ lực chưa kịp gọi tên.</p>
-            <p>Nhưng hoá ra những áp lực từng trải qua cũng chỉ tóm gọn trong tiếng thở dài trôi đi mất, chỉ có trải nghiệm, tư duy logic và sự mạnh mẽ là ở lại. Những bài toán khó, những lần debug thâu đêm đã tôi luyện nên một Minh Khôi kiên cường của ngày hôm nay.</p>
-            <p>Mong rằng mỗi chúng ta trong hôm nay hay trong muôn ngày sau nữa đều sẽ sống đời kiêu hãnh có khiêm nhường, hạnh phúc có bình an và tinh khiết, thanh yên giữa đời sống vội vã ngoài kia.</p>
-            <p class="signature">Minh Khôi</p>
-        </section>
+            <!-- Thông tin thời gian địa điểm -->
+            <section class="details">
+                <h3>Kỷ niệm cùng</h3>
+                <p class="to-name">Tập thể lớp</p>
+                <div class="time-container">
+                    <p class="time">2023 - 2026</p>
+                    <p class="day">Khóa học</p>
+                    <p class="date">Trưởng thành & Tri ân</p>
+                </div>
+                <h3>Tại mái trường</h3>
+                <p class="location">THPT CHUYÊN LÊ QUÝ ĐÔN</p>
+                <p class="address">67 Yersin, Phương Sài, Nha Trang, Khánh Hòa</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.022421869389!2d109.18956901124434!3d12.24677768792078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170677a28e93ba9%3A0x6e289c0a340b07de!2zVHLGsOG7nW5nIFRIUFQgQ2h1ecOqbiBMw6ogUXXDvSDEkMO0bg!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
 
-        <!-- Phần Góc Lưu Bút -->
-        <section class="guestbook">
-            <h3>Góc Lưu Bút</h3>
-            <p class="guestbook-desc">Hãy để lại vài dòng nhắn gửi, lưu giữ lại một phần thanh xuân rực rỡ của chúng ta trên trang web này nhé!</p>
-            <form id="guestbook-form">
-                <input type="text" placeholder="Tên của bạn..." name="name" required>
-                <textarea placeholder="Bạn muốn nhắn nhủ điều gì..." name="message" required></textarea>
-                <button type="submit">GỬI LƯU BÚT</button>
-            </form>
-        </section>
-        
-        <!-- Lời cảm ơn cuối trang -->
-        <section class="thank-you-section">
-            <div class="thank-you-overlay">
-                <p class="thank-you-text">Thank you!</p>
-            </div>
-            <img src="https://via.placeholder.com/400x250?text=Hẹn+gặp+lại" alt="Ảnh kết thúc" class="thank-you-img">
-        </section>
-    </main>
+            <!-- Album Ảnh -->
+            <section class="photo-album">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/400x300?text=Kỷ+niệm+1" alt="Ảnh 1"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/400x300?text=Kỷ+niệm+2" alt="Ảnh 2"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-    <footer>
-        <button id="music-toggle" class="music-btn">&#9835;</button>
-    </footer>
+            <!-- Phần Tâm Thư -->
+            <section class="letter">
+                <h3 class="letter-heading">Đi qua hoài nghi - giữ lại chính mình</h3>
+                <p>Hành trình 1000 ngày tại Lê Quý Đôn đến với mình như một cơ hội, mang theo rất nhiều điều để học, để lớn lên. Những ngày tháng miệt mài cùng các dòng code ở lớp Chuyên Tin đôi khi tạo ra những áp lực vô hình. Ở đây, ai cũng giỏi, giỏi đến mức khiến mình đôi khi thấy bản thân nhỏ bé lại giữa những nỗ lực chưa kịp gọi tên.</p>
+                <p>Nhưng hoá ra những áp lực từng trải qua cũng chỉ tóm gọn trong tiếng thở dài trôi đi mất, chỉ có trải nghiệm, tư duy logic và sự mạnh mẽ là ở lại. Những bài toán khó, những lần debug thâu đêm đã tôi luyện nên một Minh Khôi kiên cường của ngày hôm nay.</p>
+                <p>Mong rằng mỗi chúng ta trong hôm nay hay trong muôn ngày sau nữa đều sẽ sống đời kiêu hãnh có khiêm nhường, hạnh phúc có bình an và tinh khiết, thanh yên giữa đời sống vội vã ngoài kia.</p>
+                <p class="signature">Minh Khôi</p>
+            </section>
+
+            <!-- Phần Góc Lưu Bút -->
+            <section class="guestbook">
+                <h3>Góc Lưu Bút</h3>
+                <p class="guestbook-desc">Hãy để lại vài dòng nhắn gửi, lưu giữ lại một phần thanh xuân rực rỡ của chúng ta trên trang web này nhé!</p>
+                <form id="guestbook-form">
+                    <input type="text" placeholder="Tên của bạn..." name="name" required>
+                    <textarea placeholder="Bạn muốn nhắn nhủ điều gì..." name="message" required></textarea>
+                    <button type="submit">GỬI LƯU BÚT</button>
+                </form>
+            </section>
+            
+            <!-- Lời cảm ơn cuối trang -->
+            <section class="thank-you-section">
+                <div class="thank-you-overlay">
+                    <p class="thank-you-text">Thank you!</p>
+                </div>
+                <img src="https://via.placeholder.com/400x250?text=Hẹn+gặp+lại" alt="Ảnh kết thúc" class="thank-you-img">
+            </section>
+        </main>
+
+        <footer>
+            <button id="music-toggle" class="music-btn">&#9835;</button>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
