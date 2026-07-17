@@ -1,93 +1,243 @@
 :root {
-    --bg-outside: #e2e8f0; /* Màu nền ngoài viền trên PC */
-    --bg-color: #f4f4f5; 
-    --text-color: #334155;
-    --primary-color: #0f172a; 
-    --accent-color: #cbd5e1; 
+    --bg-outside: #e5e5e5;
+    --paper-bg: #f8f9fa; /* Màu giấy cực nhẹ */
+    --text-main: #333333;
+    --navy-blue: #152238; /* Xanh navy sâu thẳm, sang trọng */
+    --gray-script: #8c929d;
     --serif-font: 'Playfair Display', serif;
-    --sans-serif-font: 'Poppins', sans-serif;
-    --script-font: 'Dancing Script', cursive; /* Font mới mượt mà, không lỗi tiếng Việt */
+    --sans-font: 'Montserrat', sans-serif; /* Font không chân hiện đại, mảnh */
+    --script-font: 'Dancing Script', cursive;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
-    font-family: var(--sans-serif-font); 
-    background-color: var(--bg-outside); /* Đổ nền xám nhạt cho toàn bộ trình duyệt */
-    color: var(--text-color); 
-    line-height: 1.7; 
+    font-family: var(--sans-font); 
+    background-color: var(--bg-outside); 
+    color: var(--text-main); 
     display: flex;
-    justify-content: center; /* Căn giữa nội dung trên màn hình to */
+    justify-content: center; 
 }
 
-/* KHUNG GIAO DIỆN CHÍNH - Tối ưu cho 2 thiết bị */
+/* Khung App */
 #app-wrapper {
     width: 100%;
-    max-width: 480px; /* Khóa kích thước hiển thị thành dạng App/Thiệp */
-    background-color: var(--bg-color);
+    max-width: 480px;
+    background-color: var(--paper-bg);
     min-height: 100vh;
     position: relative;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ khối nổi 3D trên PC */
-    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow-x: hidden; /* Ngăn các element tràn ra ngoài viền */
 }
 
-header { background-color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--accent-color); position: sticky; top: 0; z-index: 100; }
-header h1 { font-family: var(--serif-font); font-size: 1.2rem; color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-.back-btn, .menu-btn { background: none; border: none; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
+/* Header mỏng, gọn */
+header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 15px 20px; 
+    background: transparent;
+    position: absolute; width: 100%; top: 0; z-index: 100;
+}
+header h1 { font-family: var(--sans-font); font-size: 1rem; color: var(--navy-blue); font-weight: 500; letter-spacing: 1px; }
+.icon-btn { background: none; border: none; font-size: 1.5rem; color: var(--navy-blue); cursor: pointer; }
 
-main { padding: 20px; }
-section { margin-bottom: 40px; background-color: #fff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
+main { padding-top: 60px; }
 
-.hero { text-align: center; position: relative; padding-bottom: 0; background: transparent; box-shadow: none; padding: 10px 0;}
-.header-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.school-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-color);}
-.title-wrapper h2 { font-family: var(--serif-font); font-size: 1.2rem; color: var(--primary-color); line-height: 1.3; font-weight: 700; letter-spacing: 2px;}
-.name { font-family: var(--script-font); font-size: 2.5rem; color: var(--primary-color); margin-top: -5px; font-weight: 700; }
-.cover-photo { width: 100%; height: auto; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+/* 1. KHU VỰC HERO CHÍNH (Phức tạp & Xếp chồng) */
+.hero-complex {
+    position: relative;
+    padding: 20px 10px 40px 10px;
+    margin-bottom: 20px;
+}
 
-.slogan-container { background-color: #fff; padding: 15px 20px; border-radius: 12px; margin-top: -50px; position: relative; z-index: 10; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); width: 80%; margin-left: auto; margin-right: auto;}
-.slogan-large { font-family: var(--script-font); font-size: 3rem; color: var(--primary-color); font-weight: 700; line-height: 1.2;}
-.slogan-small { font-size: 1rem; color: #64748b; font-weight: 300;}
+/* Typography tự do, xoay nghiêng */
+.hero-typography {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 30px;
+}
+.script-navy {
+    font-family: var(--script-font);
+    font-size: 4rem;
+    color: var(--navy-blue);
+    line-height: 1;
+    transform: rotate(-5deg); /* Nghiêng chữ tự nhiên như viết tay */
+    margin-left: -20px;
+}
+.script-gray {
+    font-family: var(--script-font);
+    font-size: 2.2rem;
+    color: var(--gray-script);
+    margin-top: -15px;
+    margin-left: 60px;
+}
 
-.details h3, .guestbook h3 { font-family: var(--serif-font); font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; text-align: center; font-weight: 600;}
-.to-name { text-align: center; font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; color: #475569;}
-.time-container { background-color: var(--primary-color); color: #fff; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 6px 15px rgba(15, 23, 42, 0.2);}
-.time { font-size: 2.2rem; font-family: var(--serif-font); font-weight: 700; letter-spacing: 1px;}
-.day { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
-.date { font-size: 0.95rem; opacity: 0.8; font-weight: 300;}
-.location { font-weight: 600; color: var(--primary-color); text-align: center; font-size: 1.1rem;}
-.address { color: #64748b; text-align: center; margin-bottom: 20px; font-size: 0.9rem;}
-.map-container { border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+/* Bố cục chia 2 bên: Cuộn phim + Ảnh chân dung */
+.hero-visuals {
+    display: flex;
+    position: relative;
+    height: 450px;
+}
 
-.photo-album { background: none; box-shadow: none; padding: 0; }
-.swiper { width: 100%; height: auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);}
-.swiper-slide img { width: 100%; height: auto; display: block; }
-.swiper-pagination-bullet-active { background-color: var(--primary-color); }
+/* Kỹ thuật tạo cuộn phim bằng CSS thuần */
+.filmstrip-container {
+    width: 45%;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    z-index: 1;
+}
+.filmstrip {
+    background-color: var(--navy-blue);
+    padding: 10px 15px; /* Chừa không gian 2 bên cho lỗ phim */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 4px;
+    position: relative;
+}
+/* Tạo lỗ tròn của cuộn phim */
+.filmstrip::before, .filmstrip::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 8px;
+    /* Dùng gradient lặp lại để tạo các chấm màu trùng với màu nền */
+    background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 6px, var(--paper-bg) 6px, var(--paper-bg) 12px);
+}
+.filmstrip::before { left: 3px; }
+.filmstrip::after { right: 3px; }
 
-.letter { text-align: center; }
-.letter-heading { font-family: var(--script-font); font-size: 2.2rem; color: #94a3b8; margin-bottom: 25px; font-weight: 700; line-height: 1.3;}
-.letter p { text-align: justify; margin-bottom: 20px; font-size: 0.95rem; color: #475569; line-height: 1.8; font-weight: 400;}
-.signature { font-family: var(--script-font); font-size: 3.2rem; color: var(--primary-color); margin-top: 20px; font-weight: 700;}
+.filmstrip img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #fff; /* Viền trắng nhỏ của ảnh trong phim */
+}
 
-/* Form Lưu Bút */
-.guestbook-desc { text-align: center; color: #475569; margin-bottom: 20px; font-weight: 400; font-size: 0.9rem; line-height: 1.6;}
-.guestbook form { display: flex; flex-direction: column; }
-.guestbook input, .guestbook textarea { margin-bottom: 15px; padding: 14px; border: 1px solid var(--accent-color); border-radius: 8px; font-family: var(--sans-serif-font); font-size: 0.95rem; background-color: #f8fafc; transition: border-color 0.3s ease;}
-.guestbook input:focus, .guestbook textarea:focus { outline: none; border-color: var(--primary-color); }
-.guestbook textarea { height: 100px; resize: none; }
-.guestbook button { background-color: var(--primary-color); color: #fff; border: none; padding: 15px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; letter-spacing: 1px; transition: background-color 0.3s ease; }
-.guestbook button:hover { background-color: #1e293b; }
+/* Ảnh chân dung lớn, đè lên cuộn phim */
+.portrait-container {
+    width: 65%;
+    position: absolute;
+    right: 0;
+    top: 40px; /* Đẩy xuống một chút để xếp lớp đẹp hơn */
+    z-index: 5; /* Nằm trên cuộn phim */
+}
+.main-portrait {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -10px 10px 20px rgba(0,0,0,0.15); /* Đổ bóng tạo độ nổi 3D */
+}
 
-.thank-you-section { position: relative; padding: 0; margin-bottom: 0; border-radius: 15px 15px 0 0; overflow: hidden; box-shadow: none; }
-.thank-you-img { width: 100%; height: 220px; object-fit: cover; display: block; }
-.thank-you-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(15,23,42,0.85) 100%); display: flex; align-items: flex-end; padding: 25px; z-index: 2; }
-.thank-you-text { font-family: var(--script-font); font-size: 4rem; color: #fff; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.4); font-weight: 700;}
+/* 2. CÁC SECTION CHỮ TỐI GIẢN (Minimalism) */
+.minimal-section {
+    padding: 30px 20px;
+    text-align: center;
+}
 
-footer { text-align: center; padding: 20px; background-color: var(--bg-color); position: relative; border-top: 1px solid var(--accent-color);}
-.music-btn { position: absolute; right: 20px; bottom: 20px; background-color: var(--primary-color); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; display: flex; align-items: center; justify-content: center; }
+.section-subtitle { font-family: var(--sans-font); font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+.section-title { font-family: var(--serif-font); font-size: 2rem; color: var(--navy-blue); margin: 5px 0 15px 0; font-weight: 600;}
+.elegant-line { width: 40px; height: 1px; background-color: var(--navy-blue); margin: 20px auto; opacity: 0.5; }
+.info-text, .address-text { font-size: 1rem; color: #444; margin-bottom: 5px; font-weight: 300;}
 
-/* Media Query cho Mobile để đảm bảo hiển thị full màn hình */
+/* Phần Tâm Thư */
+.letter-heading {
+    font-family: var(--script-font);
+    font-size: 2.2rem;
+    color: var(--gray-script);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.letter-content p {
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.signature {
+    font-family: var(--script-font);
+    font-size: 3.5rem;
+    color: var(--navy-blue);
+    text-align: right;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+/* 3. FORM GUESTBOOK SANG TRỌNG */
+.guestbook-desc {
+    font-size: 0.9rem; color: #555; line-height: 1.6; margin-bottom: 30px; font-weight: 300;
+}
+#guestbook-form { display: flex; flex-direction: column; padding: 0 10px; }
+
+/* Các ô input có viền bo tròn hình viên thuốc (Pill shape) */
+.elegant-input {
+    background: transparent;
+    border: 1px solid var(--navy-blue);
+    border-radius: 30px; /* Bo tròn hoàn toàn */
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    font-family: var(--sans-font);
+    font-size: 0.95rem;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+}
+textarea.elegant-input {
+    border-radius: 20px; /* Textarea không bo tròn viên thuốc được vì nó cao */
+    height: 120px;
+    resize: none;
+}
+.elegant-input::placeholder { color: #888; font-weight: 300; }
+.elegant-input:focus { outline: none; box-shadow: 0 0 0 1px var(--navy-blue); }
+
+.elegant-button {
+    background-color: var(--navy-blue);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 18px;
+    font-family: var(--sans-font);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Lời cảm ơn cuối */
+.thank-you-section {
+    position: relative;
+    height: 350px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+.thank-you-img { width: 100%; height: 100%; object-fit: cover; }
+.thank-you-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(21, 34, 56, 0.9) 0%, transparent 60%);
+    display: flex; align-items: flex-end; padding: 30px 20px;
+}
+.thank-you-text {
+    font-family: var(--script-font);
+    font-size: 5rem;
+    color: #fff;
+    transform: rotate(-5deg); /* Nghiêng chữ tạo điểm nhấn cuối */
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+}
+
+footer { background: var(--navy-blue); padding: 15px; text-align: center; }
+footer p { color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px;}
+.music-btn {
+    position: absolute; right: 20px; bottom: 80px;
+    background: #fff; color: var(--navy-blue);
+    border: none; width: 45px; height: 45px; border-radius: 50%;
+    font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 @media screen and (max-width: 480px) {
-    body { background-color: var(--bg-color); }
-    #app-wrapper { box-shadow: none; max-width: 100%; }
+    #app-wrapper { max-width: 100%; box-shadow: none; }
 }
