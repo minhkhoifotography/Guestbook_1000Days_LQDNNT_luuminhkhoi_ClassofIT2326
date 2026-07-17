@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kỷ yếu Thanh Xuân - Lưu Minh Khôi</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,7 +19,7 @@
         </header>
 
         <main>
-            <section class="hero-complex">
+            <section class="hero-complex animate-on-scroll">
                 <div class="hero-typography">
                     <h2 class="script-navy">Một ngàn ngày</h2>
                     <h3 class="script-gray">Thanh xuân rực rỡ</h3>
@@ -28,10 +27,12 @@
                 
                 <div class="hero-visuals">
                     <div class="filmstrip-container">
-                        <div class="filmstrip">
+                        <div class="filmstrip sliding-film">
                             <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&auto=format&fit=crop" alt="Kỷ niệm 1">
                             <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?q=80&w=400&auto=format&fit=crop" alt="Kỷ niệm 2">
                             <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=400&auto=format&fit=crop" alt="Kỷ niệm 3">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&auto=format&fit=crop" alt="Kỷ niệm 1">
+                            <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?q=80&w=400&auto=format&fit=crop" alt="Kỷ niệm 2">
                         </div>
                     </div>
                     <div class="portrait-container">
@@ -40,31 +41,29 @@
                 </div>
             </section>
 
-            <section class="details minimal-section">
+            <section class="details minimal-section animate-on-scroll">
                 <p class="section-subtitle">Kỷ niệm cùng</p>
                 <h3 class="section-title">12 Chuyên Tin</h3>
                 <div class="elegant-line"></div>
-                
                 <p class="info-text">Niên khóa 2023 - 2026</p>
                 <p class="info-text">Lễ Trưởng Thành & Tri Ân</p>
-
                 <div class="elegant-line"></div>
                 <p class="section-subtitle">Tại mái trường</p>
                 <h3 class="section-title">THPT Lê Quý Đôn</h3>
                 <p class="address-text">67 Yersin, Phương Sài, Nha Trang</p>
             </section>
 
-            <section class="letter minimal-section">
+            <section class="letter minimal-section animate-on-scroll">
                 <h2 class="letter-heading">Đi qua áp lực - giữ lại đam mê</h2>
                 <div class="letter-content">
-                    <p>Hành trình 1000 ngày tại Lê Quý Đôn đến với mình như một cơ hội lớn, mang theo rất nhiều điều để học, để vấp ngã và trưởng thành. Những ngày tháng miệt mài cùng các dòng code ở lớp Chuyên Tin, những kỳ thi học sinh giỏi đôi khi tạo ra những áp lực vô hình. Ở đây, ai cũng xuất sắc, giỏi đến mức khiến mình đôi khi thấy bản thân nhỏ bé lại giữa những nỗ lực chưa kịp gọi tên.</p>
+                    <p>Hành trình 1000 ngày tại Lê Quý Đôn đến với mình như một cơ hội lớn, mang theo rất nhiều điều để học, để vấp ngã và trưởng thành. Những ngày tháng miệt mài cùng các dòng code ở lớp Chuyên Tin, đôi khi tạo ra những áp lực vô hình. Ở đây, ai cũng xuất sắc, khiến mình đôi khi thấy bản thân nhỏ bé lại.</p>
                     <p>Nhưng hoá ra những áp lực từng trải qua cũng chỉ tóm gọn trong tiếng thở dài trôi đi mất, chỉ có trải nghiệm, tư duy và sự kiên cường là ở lại. Những bài toán khó, những lần debug thâu đêm đã tôi luyện nên một Minh Khôi của ngày hôm nay.</p>
-                    <p>Mong rằng mỗi chúng ta trong hôm nay hay trong muôn ngày sau nữa, dẫu bay cao bay xa đến đâu, vẫn giữ được ngọn lửa đam mê thuần khiết, bình an và thanh yên giữa đời sống vội vã ngoài kia.</p>
+                    <p>Mong rằng mỗi chúng ta dẫu bay cao bay xa đến đâu, vẫn giữ được ngọn lửa đam mê thuần khiết, bình an và thanh yên giữa đời sống vội vã ngoài kia.</p>
                 </div>
                 <p class="signature">Minh Khôi</p>
             </section>
 
-            <section class="guestbook minimal-section">
+            <section class="guestbook minimal-section animate-on-scroll">
                 <p class="guestbook-desc">Vui lòng để lại vài dòng lưu bút để mình giữ lại thanh xuân này một cách trọn vẹn nhất.<br><br>Trân trọng cảm ơn!</p>
                 <form id="guestbook-form">
                     <input type="text" placeholder="Tên của bạn" name="name" required class="elegant-input">
@@ -73,7 +72,7 @@
                 </form>
             </section>
             
-            <section class="thank-you-section">
+            <section class="thank-you-section animate-on-scroll">
                 <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop" alt="Hẹn gặp lại" class="thank-you-img">
                 <div class="thank-you-overlay">
                     <p class="thank-you-text">Thank you!</p>
@@ -83,11 +82,13 @@
 
         <footer>
             <p>© 2026 Minh Khôi.</p>
-            <button id="music-toggle" class="music-btn">♫</button>
+            <audio id="bg-music" loop>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+            <button id="music-toggle" class="music-btn">🎵</button>
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
