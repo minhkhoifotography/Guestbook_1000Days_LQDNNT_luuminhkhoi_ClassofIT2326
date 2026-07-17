@@ -1,67 +1,93 @@
 :root {
-    --bg-color: #f4f4f5; /* Xám nhạt, sang trọng hơn */
+    --bg-outside: #e2e8f0; /* Màu nền ngoài viền trên PC */
+    --bg-color: #f4f4f5; 
     --text-color: #334155;
-    --primary-color: #0f172a; /* Xanh navy cực đậm - Quiet Luxury */
-    --accent-color: #e2e8f0; 
+    --primary-color: #0f172a; 
+    --accent-color: #cbd5e1; 
     --serif-font: 'Playfair Display', serif;
     --sans-serif-font: 'Poppins', sans-serif;
-    --script-font: 'Great Vibes', cursive;
+    --script-font: 'Dancing Script', cursive; /* Font mới mượt mà, không lỗi tiếng Việt */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--sans-serif-font); background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; }
 
-header { background-color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--accent-color); }
-header h1 { font-family: var(--serif-font); font-size: 1.4rem; color: var(--primary-color); font-weight: 600; letter-spacing: 1px; }
+body { 
+    font-family: var(--sans-serif-font); 
+    background-color: var(--bg-outside); /* Đổ nền xám nhạt cho toàn bộ trình duyệt */
+    color: var(--text-color); 
+    line-height: 1.7; 
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung trên màn hình to */
+}
+
+/* KHUNG GIAO DIỆN CHÍNH - Tối ưu cho 2 thiết bị */
+#app-wrapper {
+    width: 100%;
+    max-width: 480px; /* Khóa kích thước hiển thị thành dạng App/Thiệp */
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ khối nổi 3D trên PC */
+    overflow: hidden;
+}
+
+header { background-color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--accent-color); position: sticky; top: 0; z-index: 100; }
+header h1 { font-family: var(--serif-font); font-size: 1.2rem; color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 .back-btn, .menu-btn { background: none; border: none; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
 
-main { padding: 20px; max-width: 600px; margin: 0 auto; /* Căn giữa nếu xem trên màn hình rộng */ }
-section { margin-bottom: 40px; background-color: #fff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03); }
+main { padding: 20px; }
+section { margin-bottom: 40px; background-color: #fff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
 
-.hero { text-align: center; position: relative; padding-bottom: 0; }
+.hero { text-align: center; position: relative; padding-bottom: 0; background: transparent; box-shadow: none; padding: 10px 0;}
 .header-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.school-logo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
-.title-wrapper h2 { font-family: var(--serif-font); font-size: 1.25rem; color: var(--primary-color); line-height: 1.3; font-weight: 700; letter-spacing: 2px;}
-.name { font-family: var(--script-font); font-size: 2.8rem; color: var(--primary-color); margin-top: -15px; }
-.cover-photo { width: 100%; height: auto; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.school-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-color);}
+.title-wrapper h2 { font-family: var(--serif-font); font-size: 1.2rem; color: var(--primary-color); line-height: 1.3; font-weight: 700; letter-spacing: 2px;}
+.name { font-family: var(--script-font); font-size: 2.5rem; color: var(--primary-color); margin-top: -5px; font-weight: 700; }
+.cover-photo { width: 100%; height: auto; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
-.slogan-container { background-color: #fff; padding: 20px; border-radius: 12px; margin-top: -60px; position: relative; z-index: 10; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); width: 85%; margin-left: auto; margin-right: auto;}
-.slogan-large { font-family: var(--script-font); font-size: 3.2rem; color: var(--primary-color); }
-.slogan-small { font-size: 1.1rem; color: #64748b; margin-top: -10px; font-weight: 300;}
+.slogan-container { background-color: #fff; padding: 15px 20px; border-radius: 12px; margin-top: -50px; position: relative; z-index: 10; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); width: 80%; margin-left: auto; margin-right: auto;}
+.slogan-large { font-family: var(--script-font); font-size: 3rem; color: var(--primary-color); font-weight: 700; line-height: 1.2;}
+.slogan-small { font-size: 1rem; color: #64748b; font-weight: 300;}
 
-.details h3, .guestbook h3 { font-family: var(--serif-font); font-size: 1.8rem; color: var(--primary-color); margin-bottom: 15px; text-align: center; font-weight: 600;}
-.to-name { text-align: center; font-size: 1.2rem; margin-bottom: 20px; font-weight: 500;}
-.time-container { background-color: var(--primary-color); color: #fff; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.2);}
+.details h3, .guestbook h3 { font-family: var(--serif-font); font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; text-align: center; font-weight: 600;}
+.to-name { text-align: center; font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; color: #475569;}
+.time-container { background-color: var(--primary-color); color: #fff; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 6px 15px rgba(15, 23, 42, 0.2);}
 .time { font-size: 2.2rem; font-family: var(--serif-font); font-weight: 700; letter-spacing: 1px;}
-.day { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
-.date { font-size: 1rem; opacity: 0.8; font-weight: 300;}
+.day { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
+.date { font-size: 0.95rem; opacity: 0.8; font-weight: 300;}
 .location { font-weight: 600; color: var(--primary-color); text-align: center; font-size: 1.1rem;}
-.address { color: #64748b; text-align: center; margin-bottom: 20px; font-size: 0.95rem;}
+.address { color: #64748b; text-align: center; margin-bottom: 20px; font-size: 0.9rem;}
 .map-container { border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
 
 .photo-album { background: none; box-shadow: none; padding: 0; }
-.swiper { width: 100%; height: auto; border-radius: 12px; overflow: hidden; }
+.swiper { width: 100%; height: auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);}
 .swiper-slide img { width: 100%; height: auto; display: block; }
 .swiper-pagination-bullet-active { background-color: var(--primary-color); }
 
 .letter { text-align: center; }
-.letter-heading { font-family: var(--script-font); font-size: 2.4rem; color: #94a3b8; margin-bottom: 25px; font-weight: normal; }
-.letter p { text-align: justify; margin-bottom: 20px; font-size: 0.95rem; color: #475569; line-height: 1.8; font-weight: 300;}
-.signature { font-family: var(--script-font); font-size: 3.5rem; color: var(--primary-color); margin-top: 30px; }
+.letter-heading { font-family: var(--script-font); font-size: 2.2rem; color: #94a3b8; margin-bottom: 25px; font-weight: 700; line-height: 1.3;}
+.letter p { text-align: justify; margin-bottom: 20px; font-size: 0.95rem; color: #475569; line-height: 1.8; font-weight: 400;}
+.signature { font-family: var(--script-font); font-size: 3.2rem; color: var(--primary-color); margin-top: 20px; font-weight: 700;}
 
-/* CSS cho Form Lưu Bút */
-.guestbook-desc { text-align: center; color: #475569; margin-bottom: 25px; font-weight: 400; font-size: 0.95rem; line-height: 1.6;}
+/* Form Lưu Bút */
+.guestbook-desc { text-align: center; color: #475569; margin-bottom: 20px; font-weight: 400; font-size: 0.9rem; line-height: 1.6;}
 .guestbook form { display: flex; flex-direction: column; }
-.guestbook input, .guestbook textarea { margin-bottom: 18px; padding: 15px; border: 1px solid var(--accent-color); border-radius: 8px; font-family: var(--sans-serif-font); font-size: 1rem; background-color: #f8fafc; transition: border-color 0.3s ease;}
+.guestbook input, .guestbook textarea { margin-bottom: 15px; padding: 14px; border: 1px solid var(--accent-color); border-radius: 8px; font-family: var(--sans-serif-font); font-size: 0.95rem; background-color: #f8fafc; transition: border-color 0.3s ease;}
 .guestbook input:focus, .guestbook textarea:focus { outline: none; border-color: var(--primary-color); }
-.guestbook textarea { height: 120px; resize: none; }
-.guestbook button { background-color: var(--primary-color); color: #fff; border: none; padding: 16px; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; letter-spacing: 1px; transition: background-color 0.3s ease; }
+.guestbook textarea { height: 100px; resize: none; }
+.guestbook button { background-color: var(--primary-color); color: #fff; border: none; padding: 15px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; letter-spacing: 1px; transition: background-color 0.3s ease; }
 .guestbook button:hover { background-color: #1e293b; }
 
 .thank-you-section { position: relative; padding: 0; margin-bottom: 0; border-radius: 15px 15px 0 0; overflow: hidden; box-shadow: none; }
-.thank-you-img { width: 100%; height: 250px; object-fit: cover; display: block; }
-.thank-you-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(15,23,42,0.8) 100%); display: flex; align-items: flex-end; padding: 30px; z-index: 2; }
-.thank-you-text { font-family: var(--script-font); font-size: 4.5rem; color: #fff; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.thank-you-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.thank-you-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(15,23,42,0.85) 100%); display: flex; align-items: flex-end; padding: 25px; z-index: 2; }
+.thank-you-text { font-family: var(--script-font); font-size: 4rem; color: #fff; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.4); font-weight: 700;}
 
-footer { text-align: center; padding: 20px; background-color: var(--bg-color); position: relative; }
-.music-btn { position: fixed; right: 20px; bottom: 20px; background-color: var(--primary-color); color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 100; display: flex; align-items: center; justify-content: center; }
+footer { text-align: center; padding: 20px; background-color: var(--bg-color); position: relative; border-top: 1px solid var(--accent-color);}
+.music-btn { position: absolute; right: 20px; bottom: 20px; background-color: var(--primary-color); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; display: flex; align-items: center; justify-content: center; }
+
+/* Media Query cho Mobile để đảm bảo hiển thị full màn hình */
+@media screen and (max-width: 480px) {
+    body { background-color: var(--bg-color); }
+    #app-wrapper { box-shadow: none; max-width: 100%; }
+}
